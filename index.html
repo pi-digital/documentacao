@@ -14,6 +14,12 @@
 		<link rel="stylesheet" type="text/css" href="css/tabs.css">
 		<link rel="stylesheet" type="text/css" href="css/tabstyles.css">
   		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap" rel="stylesheet">
+				<script>
+			document.documentElement.className = 'js';
+			function browserCanUseCssVariables() { return window.CSS && window.CSS.supports && window.CSS.supports('--fake-var', 0); }
+			if (!browserCanUseCssVariables()) alert('Your browser does not support CSS Variables. Please use a modern browser to view this demo.');
+		</script>
+
 		<script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
 		<script src="js/modernizr.custom.js"></script>
 	<script type="text/javascript">
@@ -58,21 +64,78 @@ myYumpu.create_player("#yumpuMagazineContainer", "", { lang:"en", embed_id:"Cs6L
 				<h2>Documentação</h2>
 				<h5>ÚLTIMA ATUALIZAÇÃO<br>05/10/2019</h5>
 			</header>
-			<section>
-				<div class="tabs tabs-style-linetriangle">
-					<nav>
-						<ul>
-							<li><a href="#section-linetriangle-1"><span>Plano PI Digital</span></a></li>
-							<li><a href="#section-linetriangle-2"><span>Carta de Serviços ao Usuário</span></a></li>
-						</ul>
-					</nav>
-					<div class="content-wrap">
-						<section id="section-linetriangle-1">
-							<div class='embed-container' data-page-width='452' data-page-height='640' id='ypembedcontainer' ><iframe   src="https://www.yumpu.com/pt/embed/view/QOpjw69PABvc3gf4" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe></div><script src='https://players.yumpu.com/modules/embed/yp_r_iframe.js' ></script>
-</section>
-						<section id="section-linetriangle-2">
-							<div class='embed-container' data-page-width='452' data-page-height='640' id='ypembedcontainer' ><iframe   src="https://www.yumpu.com/pt/embed/view/ScAECXDIW7Pfikse" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe></div><script src='https://players.yumpu.com/modules/embed/yp_r_iframe.js' ></script>
-</section>
+			<section class="content content--nandi">
+				<div class="grid">
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item">
+						<div class="folder folder--nandi">
+							<div class="folder__icon folder__icon--perspective">
+								<div class="folder__icon-img folder__icon-img--back">
+									<svg class="folder__icon-svg"><use xlink:href="#icon-folderback"></use></svg>
+								</div>
+								<div class="folder__icon-deco"></div>
+								<div class="folder__preview folder__preview--magnifier">
+									<p class="folder__detail">
+										<svg class="folder__detail-svg folder__detail-svg--txt"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">qa.txt</span>
+									</p>
+									<p class="folder__detail">
+										<svg class="folder__detail-svg folder__detail-svg--mp3"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">cats.mp3</span>
+									</p>
+									<p class="folder__detail">
+										<svg class="folder__detail-svg folder__detail-svg--gif"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">funny.gif</span>
+									</p>
+									<p class="folder__detail">
+										<svg class="folder__detail-svg folder__detail-svg--gif"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">hoho.gif</span>
+									</p>
+									<p class="folder__detail">
+										<svg class="folder__detail-svg folder__detail-svg--txt"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">letter.txt</span>
+									</p>
+									<p class="folder__detail">
+										<svg class="folder__detail-svg folder__detail-svg--gif"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">boss.gif</span>
+									</p>
+									<p class="folder__detail">
+										<svg class="folder__detail-svg folder__detail-svg--txt"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">ufo.txt</span>
+									</p>
+									<p class="folder__detail">
+										<svg class="folder__detail-svg folder__detail-svg--mp3"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">howl.mp3</span>
+									</p>
+									<p class="folder__detail">
+										<svg class="folder__detail-svg"><use xlink:href="#icon-file"></use></svg>
+										<span class="folder__detail-text">&bull;&bull;&bull;</span>
+									</p>
+								</div>
+								<div class="folder__icon-img folder__icon-img--cover">
+									<svg class="folder__icon-svg"><use xlink:href="#icon-foldercover"></use></svg>
+									<svg class="folder__icon-svg folder__icon-svg--deco"><use xlink:href="#icon-cloud"></use></svg>
+								</div>
+							</div>
+							<h3 class="folder__caption">Nandi</h3>
+						</div>
+					</div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+					<div class="grid__item"><div class="dummy"><svg><use xlink:href="#icon-folderdummy"></use></svg></div></div>
+				</div><!-- /grid-->
+			</section>
+
 		</div>
 		</div>
 		<div class="footer">
