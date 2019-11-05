@@ -443,7 +443,6 @@ p {
 	display: block;
 	width: var(--folder-width);
 	height: var(--folder-height);
-	margin-bottom: 0.75em; 
 }
 
 /* Individual styles and colors */
