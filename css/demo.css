@@ -254,19 +254,6 @@ p {
 	width: calc(5 * (2 * var(--grid-item-padding) + var(--folder-width)));
 }
 
-.content::after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 2em;
-	counter-increment: folderstyle;
-	font-weight: bold;
-	content: "folder style \203A  00" counter(folderstyle);
-	letter-spacing: 1px;
-	font-size: 0.95em;
-	color: #323437;
-}
-
 .grid__item {
 	padding: var(--grid-item-padding);
 }
