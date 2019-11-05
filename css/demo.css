@@ -190,6 +190,15 @@ p {
     overflow: hidden;
 }
 
+.grid {
+    flex: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: calc(5 * (2 * var(--grid-item-padding) + var(--folder-width)));
+}
+
 /* To Navigation Style */
 .codrops-top {
 	width: 100%;
