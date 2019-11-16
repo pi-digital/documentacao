@@ -97,6 +97,7 @@ a.icon{
     top:0px;
     left:52px;
     text-indent:10px;
+    line-height:52px;
     text-shadow:1px 1px 1px #fff;
     text-transform:uppercase;
 }
@@ -108,7 +109,7 @@ a.icon{
     list-style:none;
     position:absolute;
     top:60px;
-    left:0px;
+    left:25px;
     display:none;
 }
 .item ul li a{
