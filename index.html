@@ -226,13 +226,13 @@ chart.data = [ {
 } ];
 chart.dateFormatter.dateFormat = "dd-MM-yyyy";
 chart.dateFormatter.inputDateFormat = "dd-MM-yyyy";
-chart.fontSize = 11;
+chart.fontSize = 14;
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "category";
 categoryAxis.renderer.grid.template.disabled = true;
 categoryAxis.renderer.labels.template.paddingRight = 25;
-categoryAxis.renderer.minGridDistance = 10;
-categoryAxis.renderer.innerRadius = -60;
+categoryAxis.renderer.minGridDistance = 20;
+categoryAxis.renderer.innerRadius = -80;
 categoryAxis.renderer.radius = 60;
 categoryAxis.renderer.labels.template.disabled = true;
 var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -253,7 +253,7 @@ labelTemplate.background.fill = new am4core.InterfaceColorSet().getFor("backgrou
 labelTemplate.background.fillOpacity = 1;
 labelTemplate.padding(7,7,7,7);
 var series1 = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
-series1.columns.template.height = am4core.percent(20);
+series1.columns.template.height = am4core.percent(40);
 series1.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
 series1.dataFields.openDateX = "start";
 series1.dataFields.dateX = "end";
