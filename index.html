@@ -19,10 +19,6 @@
 			if (!browserCanUseCssVariables()) alert('Your browser does not support CSS Variables. Please use a modern browser to view this demo.');
 		</script>
         <style>
-            *{
-                margin:0;
-                padding:0;
-            }
             body{
                 font-family:Arial;
                 background:#fff;
@@ -45,7 +41,12 @@
                 left:0px;
             }
             #content{
-                margin:0 auto;
+                position: relative;
+		overflow: hidden;
+		margin: 0 auto;
+		width: 100%;
+		font-weight: 300;
+		font-size: 1.15em;
             }
 
 	    #chartdiv {
