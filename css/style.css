@@ -29,7 +29,6 @@
     font-family: "Roboto Condensed", sans-serif;
     font-size: 24px;
     font-style: normal;
-    font-weight: bold;
     letter-spacing: 1.4px;
 }
 .navigation .item{
@@ -98,7 +97,6 @@ a.icon{
     top:0px;
     left:52px;
     text-indent:10px;
-    line-height:52px;
     text-shadow:1px 1px 1px #fff;
     text-transform:uppercase;
 }
@@ -110,7 +108,7 @@ a.icon{
     list-style:none;
     position:absolute;
     top:60px;
-    left:25px;
+    left:0px;
     display:none;
 }
 .item ul li a{
