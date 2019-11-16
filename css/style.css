@@ -108,7 +108,7 @@ a.icon{
     list-style:none;
     position:absolute;
     top:30px;
-    left:25px;
+    left:0px;
     display:none;
 }
 .item ul li a{
