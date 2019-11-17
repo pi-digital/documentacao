@@ -63,19 +63,19 @@ a.icon{
     cursor:pointer;
 }
 .user a.icon{
-    background:transparent url(../images/user.png) no-repeat 0px 0px;
+    background:transparent url(../png/003-home.png) no-repeat 0px 0px;
 }
 .home a.icon{
-    background:transparent url(../images/home.png) no-repeat 0px 0px;
+    background:transparent url(../png/009-bell.png) no-repeat 0px 0px;
 }
 .shop a.icon{
-    background:transparent url(../images/shop.png) no-repeat 0px 0px;
+    background:transparent url(../png/004-speech-bubbles-comment-option.png) no-repeat 0px 0px;
 }
 .camera a.icon{
-    background:transparent url(../images/camera.png) no-repeat 0px 0px;
+    background:transparent url(../png/001-settings.png) no-repeat 0px 0px;
 }
 .fav a.icon{
-    background:transparent url(../images/fav.png) no-repeat 0px 0px;
+    background:transparent url(../png/007-lock.png) no-repeat 0px 0px;
 }
 .navigation .item a.active{
     background-position:0px -52px;
