@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Documentação | PI Digital</title>
+		<meta name="description" content="Documentação do Projeto de Transformação Digital dos Serviços Prestados pelo INPI" />
+		<meta name="keywords" content="transformação digital, serviços, atendimento, comunicação, interoperabilidade, dados abertos, segurança da informação" />
+		<meta name="author" content="Ouvidoria do INPI" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/demo.css">
+	        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+  		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap" rel="stylesheet">
+		<script>
+			document.documentElement.className = 'js';
+			function browserCanUseCssVariables() { return window.CSS && window.CSS.supports && window.CSS.supports('--fake-var', 0); }
+			if (!browserCanUseCssVariables()) alert('Your browser does not support CSS Variables. Please use a modern browser to view this demo.');
+		</script>
+        <style>
+            body{
+                font-family:Arial;
+                background:#fff;
+            }
+            .title{
+                width:548px;
+                height:119px;
+                position:absolute;
+                top:400px;
+                left:150px;
+                background:transparent url(images/indicadores.png) no-repeat top left;
+            }
+            a.back{
+                background:transparent url(back.png) no-repeat top left;
+                position:fixed;
+                width:150px;
+                height:27px;
+                outline:none;
+                bottom:0px;
+                left:0px;
+            }
+            #content{
+                position: relative;
+    		margin: 0;
+    		padding: 0;
+		width: 100%;
+		font-weight: 300;
+		font-size: 1.15em;
+            }
+	    #chartdiv {
+  		width:900px;
+		height: 750px;
+  		position:absolute;
+		top:200px;
+		text-align: left;
+		font-family: "Roboto Condensed";
+	    }
+	</style>
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/plugins/timeline.js"></script>
+<script src="https://www.amcharts.com/lib/4/plugins/bullets.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+var chart = am4core.create("chartdiv", am4plugins_timeline.SpiralChart);
+//chart.curveContainer.padding(20,20,20,20);
+chart.levelCount = 2;
+chart.yAxisRadius = am4core.percent(25);
+chart.yAxisInnerRadius = am4core.percent(-40);
+chart.startAngle = -90;
+var colorSet = new am4core.ColorSet();
+chart.data = [ {
+  "category": "Module #1",
+  "start": "2019-08-01",
+  "end": "2019-09-01",
+  "color": colorSet.getIndex(0),
+  "task": "#01: Nova Carta e Atualização do Portal de Serviços"
+}, {
+  "category": "Module #2",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(1),
+  "task": "#02: Login Único (Acesso Br)"
+}, {
+  "category": "Module #3",
+  "start": "2019-08-01",
+  "end": "2019-09-01",
+  "color": colorSet.getIndex(2),
+  "task": "#03: Diagnóstico de Transformação Digital"
+}, {
+  "category": "Module #4",
+  "start": "2019-08-01",
+  "end": "2020-04-01",
+  "color": colorSet.getIndex(3),
+  "task": "#04: Implementação do GovPay"
+}, {
+  "category": "Module #5",
+  "start": "2019-08-01",
+  "end": "2020-09-01",
+  "color": colorSet.getIndex(4),
+  "task": "#05: Aplicativo (App)"
+}, {
+  "category": "Module #6",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(5),
+  "task": "#06: Módulo E-Chip"
+}, {
+  "category": "Module #7",
+  "start": "2019-08-01",
+  "end": "2021-09-01",
+  "color": colorSet.getIndex(6),
+  "task": "#07: Automação do Fluxo de Pedidos de Patentes"
+}, {
+  "category": "Module #8",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(7),
+  "task": "#08: Novo BuscaWeb"
+}, {
+  "category": "Module #9",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(8),
+  "task": "#09: Novo Portal do INPI"
+}, {
+  "category": "Module #10",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(9),
+  "task": "#10: Módulo de Avaliação Pós-Consumo"
+}, {
+  "category": "Module #11",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(10),
+  "task": "#11: Agendamento de Atendimento Presencial"
+}, {
+  "category": "Module #12",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(11),
+  "task": "#12: Guia de Atendimento do INPI"
+}, {
+  "category": "Module #13",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(12),
+  "task": "#13: Notificação Automática por SMS"
+}, {
+  "category": "Module #14",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(13),
+  "task": "#14: Plano de Dados Abertos do INPI"
+}, {
+  "category": "Module #15",
+  "start": "2019-08-01",
+  "end": "2020-08-01",
+  "color": colorSet.getIndex(14),
+  "task": "#15: Nova Versão de Publicação da RPI"
+}, {
+  "category": "Module #16",
+  "start": "2019-08-01",
+  "end": "2020-08-01",
+  "color": colorSet.getIndex(15),
+  "task": "#16: Nova Modelagem de Conteúdo Eletrônico"
+}, {
+  "category": "Module #17",
+  "start": "2019-08-01",
+  "end": "2020-08-01",
+  "color": colorSet.getIndex(16),
+  "task": "#17: Interação Eletrônica Informativa"
+}, {
+  "category": "Module #18",
+  "start": "2019-08-01",
+  "end": "2020-08-01",
+  "color": colorSet.getIndex(17),
+  "task": "#18: Assistência Virtual por Chatbot"
+}, {
+  "category": "Module #19",
+  "start": "2019-08-01",
+  "end": "2019-11-01",
+  "color": colorSet.getIndex(18),
+  "task": "#19: Monitoramento do PI Digital"
+}, {
+  "category": "Module #20",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(19),
+  "task": "#20: Análise de Viabilidade do ConectaGov"
+}, {
+  "category": "Module #21",
+  "start": "2019-08-01",
+  "end": "2020-08-01",
+  "color": colorSet.getIndex(20),
+  "task": "#21: Integração ao ConectaGov"
+},{
+  "category": "Module #22",
+  "start": "2019-08-01",
+  "end": "2020-02-01",
+  "color": colorSet.getIndex(21),
+  "task": "#22: Análise de Viabilidade da Expansão de Dados em Nuvem"
+}, {
+  "category": "Module #23",
+  "start": "2019-08-01",
+  "end": "2020-08-01",
+  "color": colorSet.getIndex(22),
+  "task": "#23: Expansão de Dados em Nuvem"
+}, {
+  "category": "Module #24",
+  "start": "2019-08-01",
+  "end": "2020-08-01",
+  "color": colorSet.getIndex(23),
+  "task": "#24: Proteção de Dados Pessoais"
+} ];
+chart.dateFormatter.dateFormat = "dd-MM-yyyy";
+chart.dateFormatter.inputDateFormat = "dd-MM-yyyy";
+chart.fontSize = 14;
+var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.grid.template.disabled = true;
+categoryAxis.renderer.labels.template.paddingRight = 25;
+categoryAxis.renderer.minGridDistance = 40;
+categoryAxis.renderer.innerRadius = -200;
+categoryAxis.renderer.radius = 60;
+categoryAxis.renderer.labels.template.disabled = true;
+var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 70;
+dateAxis.baseInterval = { count: 1, timeUnit: "day" };
+dateAxis.renderer.tooltipLocation = 0;
+dateAxis.startLocation = 0;
+dateAxis.renderer.line.strokeDasharray = "1,4";
+dateAxis.renderer.line.strokeOpacity = 0.7;
+dateAxis.tooltip.background.fillOpacity = 0.2;
+dateAxis.tooltip.background.cornerRadius = 5;
+dateAxis.tooltip.label.fill = new am4core.InterfaceColorSet().getFor("alternativeBackground");
+dateAxis.tooltip.label.paddingTop = 7;
+var labelTemplate = dateAxis.renderer.labels.template;
+labelTemplate.verticalCenter = "middle";
+labelTemplate.fillOpacity = 0.7;
+labelTemplate.background.fill = new am4core.InterfaceColorSet().getFor("background");
+labelTemplate.background.fillOpacity = 1;
+labelTemplate.padding(7,7,7,7);
+var series1 = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
+series1.columns.template.height = am4core.percent(40);
+series1.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
+series1.dataFields.openDateX = "start";
+series1.dataFields.dateX = "end";
+series1.dataFields.categoryY = "category";
+series1.columns.template.propertyFields.fill = "color"; // get color from data
+series1.columns.template.propertyFields.stroke = "color";
+series1.columns.template.strokeOpacity = 0;
+var bullet = new am4charts.CircleBullet();
+series1.bullets.push(bullet);
+bullet.circle.radius = 3;
+bullet.circle.strokeOpacity = 0;
+bullet.propertyFields.fill = "color";
+bullet.locationX = 0;
+var bullet2 = new am4charts.CircleBullet();
+series1.bullets.push(bullet2);
+bullet2.circle.radius = 3;
+bullet2.circle.strokeOpacity = 0;
+bullet2.propertyFields.fill = "color";
+bullet2.locationX = 1;
+var cursor = new am4plugins_timeline.CurveCursor();
+chart.cursor = cursor;
+cursor.xAxis = dateAxis;
+cursor.yAxis = categoryAxis;
+cursor.lineY.disabled = true;
+cursor.lineX.strokeDasharray = "1,4";
+cursor.lineX.strokeOpacity = 1;
+dateAxis.renderer.tooltipLocation2 = 0;
+categoryAxis.cursorTooltipEnabled = false;
+}); // end am4core.ready()
+</script>
+
+        </style>
+    </head>
+
+    <body>
+		<svg class="hidden">
+			<defs>
+				<path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path>
+			</defs>
+		</svg>
+		<div class="container">
+			<!-- Top Navigation -->
+			<header class="codrops-header">
+				<a href="https://pi-digital.github.io/apresentacao/"><h1>Plano PI Digital</h1></a>
+				<h2>Documentação</h2>
+				<h5>ÚLTIMA ATUALIZAÇÃO<br>05/11/2019</h5>
+			</header>
+		</div>
+        <div id="content">
+            <div id="chartdiv"></div>
+<div class="navigation" id="nav">
+<div class="item user">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Início</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital.pdf">Plano</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital - Compromissos dos Partícipes.pdf">Compromisso</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital - Governança.xlsx">Governança</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital - Cronograma.xlsx">Cronograma</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital - Edital de Seleção">Seleção</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/riscos.html">Riscos</a></li>
+</ul>
+</div>
+<div class="item home">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Atendimento</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Carta de Serviços ao Usuário - 3ª Edição.pdf">Carta</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Diagnóstico de Transformação Digital de Serviços Federais - Versão 2.2.pdf">Diagnóstico</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Fluxo de pagamento de retribuições representado graficamente pelo Serviço de Arrecadação do INPI por meio da ferramenta Bizagi.pdf">Fluxo de Retribuições</a></li>
+</ul>
+</div>
+<div class="item shop">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Comunicação</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Pesquisa de Usabilidade do Portal do INPI realizada pela Ouvidoria do INPI.pdf">Usabilidade do Portal</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Relatório - Pesquisa com usuários externos.pdf">Minha Primeira Patente</a></li>
+</ul>
+</div>
+<div class="item camera">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Interoperabilidade</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano de Integração ao Login Único.pdf">Login Único</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Ofício SEI nº 304-2019-PR-INPI.pdf">ConectaGov</a></li>
+</ul>
+</div>
+<div class="item fav">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Infraestrutura</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Ofício SEI nº 228-2019-PR-INPI.pdf">Módulo E-Chip</a></li>
+</ul>
+</div>
+</div>
+        </div>
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#nav > div').hover(
+                function () {
+                    var $this = $(this);
+                    $this.find('img').stop().animate({
+                        'width'     :'199px',
+                        'height'    :'199px',
+                        'top'       :'-25px',
+                        'left'      :'-25px',
+                        'opacity'   :'1.0'
+                    },500,'easeOutBack',function(){
+                        $(this).parent().find('ul').fadeIn(700);
+                    });
+                    $this.find('a:first,h2').addClass('active');
+                },
+                function () {
+                    var $this = $(this);
+                    $this.find('ul').fadeOut(500);
+                    $this.find('img').stop().animate({
+                        'width'     :'52px',
+                        'height'    :'52px',
+                        'top'       :'0px',
+                        'left'      :'0px',
+                        'opacity'   :'0.1'
+                    },5000,'easeOutBack');
+                    $this.find('a:first,h2').removeClass('active');
+                }
+            );
+            });
+        </script>
+    </body>
+</html>
