@@ -89,6 +89,67 @@ a:hover, a:focus {
 	color: #74777b;
 }
 
+.related {
+	text-align: center;
+	font-size: 1.25em;
+	padding: 3em 0;
+	overflow: hidden;
+}
+
+.related a {
+	display: inline-block;
+	text-align: left;
+	margin: 20px auto;
+	padding: 10px 20px;
+	opacity: 0.8;
+	color: #777;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	-webkit-backface-visibility: hidden;
+}
+
+.related a:hover,
+.related a:active {
+	opacity: 1;
+}
+
+.related a img {
+	max-width: 100%;
+}
+
+.related a h3 {
+	font-weight: 300;
+	margin: 0;
+	padding: 0.3em 0;
+}
+
+.wrap {
+	background-color: #f4726d
+}
+
+.wrap > div {
+	float: left;
+	overflow: hidden;
+	padding: 0 0 8em;
+	height: 275px;
+	width: 50%;
+	text-align: center;
+}
+
+.wrap > div h2 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 0;
+	padding: 4em 0 5em;
+	font-size: 0.85em;
+	color: #c44d48;
+}
+
+.dotstyle:nth-child(4n),
+.dotstyle:nth-child(4n-3) {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
 .support {
 	display: none;
 	color: #ef5189;
@@ -895,4 +956,32 @@ p {
 	.codrops-icon span {
 		display: none;
 	}
+}
+@media screen and (max-width: 42em) {
+	.wrap > div {
+		float: none;
+		width: 100%;
+	}
+
+	.dotstyle:nth-child(4n),
+	.dotstyle:nth-child(4n-3) {
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	.dotstyle:nth-child(odd) {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+	.codrops-icon:before {
+		font-size: 160%;
+		line-height: 2;
+	}
+
 }
