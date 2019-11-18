@@ -51,7 +51,7 @@
 		height: 1000px;
   		position:absolute;
 		font-family: "Roboto Condensed";
-		top: -105px;
+		top: -65px;
     		left: -100px;
 	    }
 	</style>
@@ -238,7 +238,26 @@ chart.cursor.lineY.disabled = true;
                         'opacity'   :'0.1'
                     },5000,'easeOutBack');
                     $this.find('a:first,h2').removeClass('active');
-                }
+                },
+		function(ev) {
+                    ev.preventDefault();
+                      if (idx !== current) {
+                        dots[current].className = '';
+
+    // special case
+    if (hop && idx < current) {
+      dot.className += ' current-from-right';
+    }
+
+    setTimeout(function() {
+      dot.className += ' current';
+      current = idx;
+      if (typeof self.options.callback === 'function') {
+        self.options.callback(current);
+      }
+    }, 25);
+  }
+}
             );
             });
         </script>
