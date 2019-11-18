@@ -350,6 +350,12 @@
 }
 
 /* Tooltip */
+.dotstyle-tooltip {
+ 	position:absolute;
+	text-align: left;
+	top:200px;
+	font-family: "Roboto Condensed";
+}
 
 .dotstyle-tooltip li {
 	border: 2px solid #fff;
