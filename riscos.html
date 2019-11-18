@@ -40,8 +40,8 @@
             }
             #content{
                 position: relative;
-    		padding: 0;
-		top:200px;
+		margin: 0;
+		padding: 0;
 		width: 100%;
 		font-weight: 300;
 		font-size: 1.15em;
@@ -49,6 +49,7 @@
 	    #dotstyle dotstyle-tooltip {
   		position:absolute;
 		text-align: left;
+		top:200px;
 		font-family: "Roboto Condensed";
 	    }
 	    #chartdiv {
@@ -74,7 +75,6 @@ am4core.useTheme(am4themes_animated);
 
 // Create chart instance
 var chart = am4core.create("chartdiv", am4charts.RadarChart);
-chart.scrollbarX = new am4core.Scrollbar();
 
 var data = [];
 
