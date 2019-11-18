@@ -353,11 +353,17 @@
 .dotstyle-tooltip {
  	position:absolute;
 	text-align: left;
-	top:200px;
+	top: 600px;
+	left: 110px;
 	font-family: "Roboto Condensed";
 }
 
+.dotstyle-tooltip h2 {
+	top: 100px;
+}
+
 .dotstyle-tooltip li {
+  	background-color: #308fd9;
 	border: 2px solid #fff;
 	border-radius: 50%;
 	z-index: 1;
@@ -416,7 +422,7 @@
 }
 
 .dotstyle-tooltip li.current {
-	border-color: #c44d48;
+	border-color: #308fd9;
 }
 
 .dotstyle-tooltip li:hover {
