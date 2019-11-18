@@ -364,7 +364,7 @@
 
 .dotstyle-tooltip li {
   	background-color: #308fd9;
-	border: 2px solid #fff;
+	border: 2px solid #000;
 	border-radius: 50%;
 	z-index: 1;
 	-webkit-transition: border-color 0.3s ease;
