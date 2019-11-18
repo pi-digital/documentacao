@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Documentação | PI Digital</title>
+		<meta name="description" content="Documentação do Projeto de Transformação Digital dos Serviços Prestados pelo INPI" />
+		<meta name="keywords" content="transformação digital, serviços, atendimento, comunicação, interoperabilidade, dados abertos, segurança da informação" />
+		<meta name="author" content="Ouvidoria do INPI" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/demo.css">
+	        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+  		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap" rel="stylesheet">
+		<script>
+			document.documentElement.className = 'js';
+			function browserCanUseCssVariables() { return window.CSS && window.CSS.supports && window.CSS.supports('--fake-var', 0); }
+			if (!browserCanUseCssVariables()) alert('Your browser does not support CSS Variables. Please use a modern browser to view this demo.');
+		</script>
+        <style>
+            body{
+                font-family:Arial;
+                background:#fff;
+            }
+            .title{
+                width:548px;
+                height:119px;
+                position:absolute;
+                top:400px;
+                left:150px;
+                background:transparent url(images/indicadores.png) no-repeat top left;
+            }
+            a.back{
+                background:transparent url(back.png) no-repeat top left;
+                position:fixed;
+                width:150px;
+                height:27px;
+                outline:none;
+                bottom:0px;
+                left:0px;
+            }
+            #content{
+                position: relative;
+    		margin: 0;
+    		padding: 0;
+		width: 100%;
+		font-weight: 300;
+		font-size: 1.15em;
+            }
+	    #dotstyle dotstyle-tooltip {
+  		position:absolute;
+		top:200px;
+		text-align: left;
+		font-family: "Roboto Condensed";
+	    }
+	    #chartdiv {
+  		width:900px;
+		height: 1000px;
+  		position:absolute;
+		font-family: "Roboto Condensed";
+	    }
+	</style>
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+// Create chart instance
+var chart = am4core.create("chartdiv", am4charts.RadarChart);
+chart.scrollbarX = new am4core.Scrollbar();
+var data = [];
+for(var i = 0; i < 20; i++){
+  data.push({category: i, value:Math.round(Math.random() * 100)});
+}
+chart.data = data;
+chart.radius = am4core.percent(100);
+chart.innerRadius = am4core.percent(50);
+// Create axes
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.renderer.minGridDistance = 30;
+categoryAxis.tooltip.disabled = true;
+categoryAxis.renderer.minHeight = 110;
+categoryAxis.renderer.grid.template.disabled = true;
+//categoryAxis.renderer.labels.template.disabled = true;
+let labelTemplate = categoryAxis.renderer.labels.template;
+labelTemplate.radius = am4core.percent(-60);
+labelTemplate.location = 0.5;
+labelTemplate.relativeRotation = 90;
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.renderer.grid.template.disabled = true;
+valueAxis.renderer.labels.template.disabled = true;
+valueAxis.tooltip.disabled = true;
+// Create series
+var series = chart.series.push(new am4charts.RadarColumnSeries());
+series.sequencedInterpolation = true;
+series.dataFields.valueY = "value";
+series.dataFields.categoryX = "category";
+series.columns.template.strokeWidth = 0;
+series.tooltipText = "{valueY}";
+series.columns.template.radarColumn.cornerRadius = 10;
+series.columns.template.radarColumn.innerCornerRadius = 0;
+series.tooltip.pointerOrientation = "vertical";
+// on hover, make corner radiuses bigger
+let hoverState = series.columns.template.radarColumn.states.create("hover");
+hoverState.properties.cornerRadius = 0;
+hoverState.properties.fillOpacity = 1;
+series.columns.template.adapter.add("fill", function(fill, target) {
+  return chart.colors.getIndex(target.dataItem.index);
+})
+// Cursor
+chart.cursor = new am4charts.RadarCursor();
+chart.cursor.innerRadius = am4core.percent(50);
+chart.cursor.lineY.disabled = true;
+}); // end am4core.ready()
+</script>
+
+	</head>
+
+    <body>
+		<svg class="hidden">
+			<defs>
+				<path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path>
+			</defs>
+		</svg>
+		<div class="container">
+			<!-- Top Navigation -->
+			<header class="codrops-header">
+				<a href="https://pi-digital.github.io/apresentacao/"><h1>Plano PI Digital</h1></a>
+				<h2>Documentação</h2>
+				<h5>ÚLTIMA ATUALIZAÇÃO<br>05/11/2019</h5>
+			</header>
+		</div>
+        <div id="content">
+				<div class="dotstyle dotstyle-tooltip">
+					<h2>Impacto dos Riscos Mapeados</h2>
+					<ul>
+						<li class="current"><a href="#">Insuficiência de Profissionais</a>
+						            <div id="chartdiv"></div>
+						</li>
+						<li><<a href="https://github.com/pi-digital/documentacao/riscos2.html">Inexperiência na Realização de Hackathons</a></li>
+					</ul>
+				</div>
+<div class="navigation" id="nav">
+<div class="item user">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Início</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital.pdf">Plano</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital - Compromissos dos Partícipes.pdf">Compromisso</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital - Governança.xlsx">Governança</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital - Cronograma.xlsx">Cronograma</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano PI Digital - Edital de Seleção">Seleção</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/riscos.html">Riscos</a></li>
+</ul>
+</div>
+<div class="item home">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Atendimento</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Carta de Serviços ao Usuário - 3ª Edição.pdf">Carta</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Diagnóstico de Transformação Digital de Serviços Federais - Versão 2.2.pdf">Diagnóstico</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Fluxo de pagamento de retribuições representado graficamente pelo Serviço de Arrecadação do INPI por meio da ferramenta Bizagi.pdf">Fluxo de Retribuições</a></li>
+</ul>
+</div>
+<div class="item shop">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Comunicação</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Pesquisa de Usabilidade do Portal do INPI realizada pela Ouvidoria do INPI.pdf">Usabilidade do Portal</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Relatório - Pesquisa com usuários externos.pdf">Minha Primeira Patente</a></li>
+</ul>
+</div>
+<div class="item camera">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Interoperabilidade</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Plano de Integração ao Login Único.pdf">Login Único</a></li>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Ofício SEI nº 304-2019-PR-INPI.pdf">ConectaGov</a></li>
+</ul>
+</div>
+<div class="item fav">
+<img src="png/circle.png" alt="" width="199" height="199" class="circle"/>
+<a href="#" class="icon"></a>
+<h2>Infraestrutura</h2>
+<ul>
+<li><a href="https://github.com/pi-digital/documentacao/blob/master/docs/Ofício SEI nº 228-2019-PR-INPI.pdf">Módulo E-Chip</a></li>
+</ul>
+</div>
+</div>
+        </div>
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#nav > div').hover(
+                function () {
+                    var $this = $(this);
+                    $this.find('img').stop().animate({
+                        'width'     :'199px',
+                        'height'    :'199px',
+                        'top'       :'-25px',
+                        'left'      :'-25px',
+                        'opacity'   :'1.0'
+                    },500,'easeOutBack',function(){
+                        $(this).parent().find('ul').fadeIn(700);
+                    });
+                    $this.find('a:first,h2').addClass('active');
+                },
+                function () {
+                    var $this = $(this);
+                    $this.find('ul').fadeOut(500);
+                    $this.find('img').stop().animate({
+                        'width'     :'52px',
+                        'height'    :'52px',
+                        'top'       :'0px',
+                        'left'      :'0px',
+                        'opacity'   :'0.1'
+                    },5000,'easeOutBack');
+                    $this.find('a:first,h2').removeClass('active');
+                }
+            );
+            });
+        </script>
+    </body>
+</html>
