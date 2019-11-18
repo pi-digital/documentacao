@@ -353,7 +353,7 @@
 .dotstyle-tooltip {
  	position:absolute;
 	text-align: left;
-	top: 650px;
+	top: 775px;
 	left: 110px;
 	font-family: "Roboto Condensed";
 	font-size: 14px;
@@ -402,7 +402,7 @@
 	border: solid transparent;
 	border-width: 10px;
 	border-color: transparent;
-	border-top-color: #c44d48;
+	border-top-color: #308fd9;
 	content: '';
 	pointer-events: none;
 	top: 99%;
