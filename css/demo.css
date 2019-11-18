@@ -145,11 +145,6 @@ a:hover, a:focus {
 	color: #c44d48;
 }
 
-.dotstyle:nth-child(4n),
-.dotstyle:nth-child(4n-3) {
-	background-color: rgba(0, 0, 0, 0.05);
-}
-
 .support {
 	display: none;
 	color: #ef5189;
