@@ -352,11 +352,11 @@
 /* Tooltip */
 .dotstyle-tooltip {
  	position:absolute;
-	text-align: left;
 	top: 775px;
 	left: 110px;
 	font-family: "Roboto Condensed";
 	font-size: 14px;
+	text-transform: uppercase;
 	letter-spacing: 2px;
 	text-align: center;
 }
