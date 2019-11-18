@@ -380,10 +380,9 @@
 	width: auto;
 	height: auto;
 	border-radius: 0;
-	background-color: #c44d48;
-	color: #fff;
+	color: #308fd9;;
 	text-indent: 0;
-	line-height: 2;
+	line-height: 1;
 	opacity: 0;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
