@@ -422,6 +422,7 @@
 }
 
 .dotstyle-tooltip li.current {
+  	background-color: #fff;
 	border-color: #308fd9;
 }
 
