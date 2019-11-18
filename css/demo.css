@@ -145,14 +145,6 @@ a:hover, a:focus {
 	color: #c44d48;
 }
 
-.dotstyle:nth-child(4n),
-.dotstyle:nth-child(4n-3) {
-  	position:absolute;
-	text-align: left;
-	top:200px;
-	font-family: "Roboto Condensed";
-}
-
 .support {
 	display: none;
 	color: #ef5189;
