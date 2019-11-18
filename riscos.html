@@ -69,117 +69,158 @@ am4core.ready(function() {
 am4core.useTheme(am4themes_animated);
 // Themes end
 
-// Create chart
-var chart = am4core.create("chartdiv", am4charts.PieChart);
-chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+// Create chart instance
+var chart = am4core.create("chartdiv", am4charts.RadarChart);
+
+var data = [];
 
 chart.data = [
   {
-    country: "#01",
+    category: "#01",
     value: 0
   },
   {
-    country: "#02",
+    category: "#02",
     value: 200
   },
   {
-    country: "#03",
+    category: "#03",
     value: 0
   },
   {
-    country: "#04",
+    category: "#04",
     value: 100
   },
   {
-    country: "#05",
+    category: "#05",
     value: 50
   },
   {
-    country: "#06",
+    category: "#06",
     value: 0
   },
  {
-    country: "#07",
+    category: "#07",
     value: 50
   },
  {
-    country: "#08",
+    category: "#08",
     value: 50
   },
  {
-    country: "#09",
+    category: "#09",
     value: 50
   },
  {
-    country: "#10",
+    category: "#10",
     value: 200
   },
  {
-    country: "#11",
+    category: "#11",
     value: 200
   },
  {
-    country: "#12",
+    category: "#12",
     value: 0
   },
  {
-    country: "#13",
+    category: "#13",
     value: 200
   },
  {
-    country: "#14",
+    category: "#14",
     value: 0
   },
  {
-    country: "#15",
+    category: "#15",
     value: 100
   },
  {
-    country: "#16",
+    category: "#16",
     value: 50
   },
  {
-    country: "#17",
+    category: "#17",
     value: 50
   },
  {
-    country: "#18",
+    category: "#18",
     value: 200
   },
  {
-    country: "#19",
+    category: "#19",
     value: 0
   },
  {
-    country: "#20",
+    category: "#20",
     value: 0
   },
  {
-    country: "#21",
+    category: "#21",
     value: 50
   },
  {
-    country: "#22",
+    category: "#22",
     value: 0
   },
  {
-    country: "#23",
+    category: "#23",
     value: 50
   },
  {
-    country: "#24",
+    category: "#24",
     value: 100
   },
 ];
 
-var series = chart.series.push(new am4charts.PieSeries());
-series.dataFields.value = "value";
-series.dataFields.radiusValue = "value";
-series.dataFields.category = "country";
-series.slices.template.cornerRadius = 6;
-series.colors.step = 3;
+chart.radius = am4core.percent(70);
+chart.innerRadius = am4core.percent(50);
 
-series.hiddenState.properties.endAngle = -90;
+// Create axes
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.grid.template.location = 0;
+categoryAxis.renderer.minGridDistance = 30;
+categoryAxis.tooltip.disabled = true;
+categoryAxis.renderer.minHeight = 110;
+categoryAxis.renderer.grid.template.disabled = true;
+//categoryAxis.renderer.labels.template.disabled = true;
+let labelTemplate = categoryAxis.renderer.labels.template;
+labelTemplate.radius = am4core.percent(-60);
+labelTemplate.location = 0.5;
+labelTemplate.relativeRotation = 90;
+
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.renderer.grid.template.disabled = true;
+valueAxis.renderer.labels.template.disabled = true;
+valueAxis.tooltip.disabled = true;
+
+// Create series
+var series = chart.series.push(new am4charts.RadarColumnSeries());
+series.sequencedInterpolation = true;
+series.dataFields.valueY = "value";
+series.dataFields.categoryX = "category";
+series.columns.template.strokeWidth = 0;
+series.tooltipText = "{valueY}";
+series.columns.template.radarColumn.cornerRadius = 10;
+series.columns.template.radarColumn.innerCornerRadius = 0;
+
+series.tooltip.pointerOrientation = "vertical";
+
+// on hover, make corner radiuses bigger
+let hoverState = series.columns.template.radarColumn.states.create("hover");
+hoverState.properties.cornerRadius = 0;
+hoverState.properties.fillOpacity = 1;
+
+
+series.columns.template.adapter.add("fill", function(fill, target) {
+  return chart.colors.getIndex(target.dataItem.index);
+})
+
+// Cursor
+chart.cursor = new am4charts.RadarCursor();
+chart.cursor.innerRadius = am4core.percent(50);
+chart.cursor.lineY.disabled = true;
 
 }); // end am4core.ready()
 </script>
