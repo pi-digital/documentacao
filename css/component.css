@@ -353,9 +353,12 @@
 .dotstyle-tooltip {
  	position:absolute;
 	text-align: left;
-	top: 600px;
+	top: 650px;
 	left: 110px;
 	font-family: "Roboto Condensed";
+	font-size: 14px;
+	letter-spacing: 2px;
+	text-align: center;
 }
 
 .dotstyle-tooltip h2 {
