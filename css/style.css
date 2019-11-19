@@ -112,16 +112,15 @@ a.icon{
     display:none;
 }
 .item ul li a{
-    font-size:15px;
+    font-size:13px;
     text-decoration:none;
-    letter-spacing:1.5px;
+    letter-spacing:1px;
     text-transform:uppercase;
     color:#222;
     padding:3px;
     float:left;
     clear:both;
-    width:100px;
-    text-shadow:1px 1px 1px #fff;
+    width:110px;
 }
 .item ul li a:hover{
     background-color:#fff;
